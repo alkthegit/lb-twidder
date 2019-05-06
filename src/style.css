@@ -1,0 +1,43 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    height: 15vh;
+    background-color: #005272;
+    color: white;
+}
+header h1{
+    padding-top: 10px;
+    opacity: 0.8;
+    text-align: center;
+}
+
+header p{
+    margin-top: 15px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+form{
+    margin: 20px auto ;
+    padding: 15px;
+    border: 1px dashed grey;
+    max-width: 30vw;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-grow: 100%;
+}
+
+form button[type="submit"]{
+    outline-style: none;
+}

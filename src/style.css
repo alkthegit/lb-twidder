@@ -11,6 +11,7 @@ header{
     height: 15vh;
     background-color: #005272;
     color: white;
+    padding-bottom: 10px;
 }
 header h1{
     padding-top: 10px;
@@ -19,15 +20,20 @@ header h1{
 }
 
 header p{
-    margin-top: 15px;
+    margin-top: 10px;
     text-align: center;
     opacity: 0.8;
+}
+
+header .main-subheading{
+    font-size: 16px;
+    margin-top: -3px;
 }
 
 form{
     margin: 20px auto ;
     padding: 15px;
-    border: 1px dashed grey;
+    border: 1px dashed #005272;
     max-width: 30vw;
     min-height: 150px;
     display: flex;
@@ -40,4 +46,13 @@ form{
 
 form button[type="submit"]{
     outline-style: none;
+}
+
+form .operand-label{
+    font-weight: bold;
+    color: #005272;
+}
+
+form input.operand{
+    color: #003e57;
 }

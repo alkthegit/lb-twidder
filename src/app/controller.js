@@ -3,7 +3,7 @@ const operandYId = "operandY";
 const twidButtonId = "twidButton";
 const twidFormId = "twidForm";
 
-/* export */ class TwidController {
+/* export */ class TwidderController {
     _operandX;
     _operandY;
     _twidButton;

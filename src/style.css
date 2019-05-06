@@ -33,19 +33,26 @@ header .main-subheading{
 form{
     margin: 20px auto ;
     padding: 15px;
-    border: 1px dashed #005272;
-    max-width: 30vw;
-    min-height: 150px;
+    border-bottom: 1px dashed #005272;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-content: center;
     align-items: center;
     flex-grow: 100%;
 }
 
+form .form-operand{
+    margin-bottom: 15px;
+}
+
 form button[type="submit"]{
     outline-style: none;
+    width: 8em;
+    height: 2.5em;
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #005272;
 }
 
 form .operand-label{
@@ -55,4 +62,8 @@ form .operand-label{
 
 form input.operand{
     color: #003e57;
+    width: 8em;
+    line-height: 1.5em;
+    font-size: 102%;
+    text-align: right;
 }

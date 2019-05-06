@@ -8,12 +8,47 @@
     <meta http-equiv="X-UA-Compatible"
         content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet"
+        href="./src/style.css">
 </head>
 
 <body>
+    <header>
+        <h1>Приложение 1</h1>
+        <p>Автор: Кузин-Алексинский А.С.</p>
+    </header>
+    <main>
+        <div id="app-twidder">
+            <form id="twidForm">
+                <div class="form-operand">
+                    <label class="operand-label"
+                        for="operandX">Первое число:</label><br>
+                    <input class="operand"
+                        type="number"
+                        name="operandX"
+                        id="operandX"
+                        step="0.1">
+                </div>
+                <div class="form-operand">
+                    <label class="operand-label"
+                        for="operandX">Второе число:</label><br>
+                    <input class="operand"
+                        type="number"
+                        name="operandY"
+                        id="operandY"
+                        step="0.1">
+                </div>
 
+                <button type="submit"
+                    id="twidButton">Сложить</button>
+            </form>
+        </div>
+    </main>
 
-    <script src="./dist/main.js"></script>
+    <script src="./src/app/model.js"></script>
+    <script src="./src/app/controller.js"></script>
+    <script src="./src/app/app.js"></script>
+    <!-- <script src="./dist/main.js"></script> -->
 </body>
 
 </html>

@@ -5,28 +5,24 @@ const defaultOperandValues = {
 
 export default class Model {
   constructor() {
-    this._x = defaultOperandValues.x;
-    this._y = defaultOperandValues.y;
+    this.x = defaultOperandValues.x;
+    this.y = defaultOperandValues.y;
   }
 
-  get x() {
-    return this._x;
+  getX() {
+    return this.x;
   }
 
-  set x(value) {
-    //TODO: check value
-    this._x = this.parseInputValue(value);
-    console.log(`new value for x: ${this._x}`);
+  setX(value) {
+    this.x = this.parseInputValue(value);
   }
 
-  get y() {
-    return this._y;
+  getY() {
+    return this.y;
   }
 
-  set y(value) {
-    //TODO: check value
-    this._y = this.parseInputValue(value);
-    console.log(`new value for y: ${this._y}`);
+  setY(value) {
+    this.y = this.parseInputValue(value);
   }
 
   twid() {

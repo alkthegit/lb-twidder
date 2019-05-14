@@ -9,11 +9,11 @@ export default class Controller {
   _twidButton;
   _twidform;
   _containerDiv;
-  _twidderModel;
+  model;
 
-  constructor(containerDiv, twidderModel) {
+  constructor(containerDiv, model) {
     this._containerDiv = containerDiv;
-    this._twidderModel = twidderModel;
+    this.model = model;
 
     this.twidButton.addEventListener('click', this.onTwid);
     this.operandX.addEventListener(
@@ -25,8 +25,8 @@ export default class Controller {
       this.updateOperandValue.bind(this, this.operandY),
     );
 
-    this.operandX.value = this._twidderModel.x;
-    this.operandY.value = this._twidderModel.y;
+    this.operandX.value = this.model.getX();
+    this.operandY.value = this.model.getY();
   }
 
   get operandX() {
@@ -60,16 +60,16 @@ export default class Controller {
   updateOperandValue = (operand, event) => {
     const value = Number.parseFloat(event.target.value);
     if (operand.id === operandXId) {
-      this._twidderModel.x = value;
+      this.model.setX(value);
     }
 
     if (operand.id === operandYId) {
-      this._twidderModel.y = value;
+      this.model.setY(value);
     }
   };
 
   onTwid = (event) => {
     event.preventDefault();
-    alert(this._twidderModel.twid());
+    alert(this.model.twid());
   };
 }

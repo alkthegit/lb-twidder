@@ -6,7 +6,6 @@ const defaultOperandValues = {
 const parseInputValue = function parseInputValue(value) {
   return +value;
 };
-
 export default class Model {
   constructor() {
     this.x = defaultOperandValues.x;
@@ -18,7 +17,7 @@ export default class Model {
   }
 
   setX(value) {
-    this.x = this.parseInputValue(value);
+    this.x = parseInputValue(value);
   }
 
   getY() {

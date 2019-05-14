@@ -7,7 +7,9 @@ export default class Controller {
   constructor(containerDiv, model) {
     this.containerDiv = containerDiv;
     this.model = model;
+  }
 
+  initialize() {
     // ссылки на элементы управления
     this.operandXElement = this.containerDiv.querySelector(`#${operandXId}`);
     this.operandYElement = this.containerDiv.querySelector(`#${operandYId}`);
@@ -20,8 +22,14 @@ export default class Controller {
     this.onTwid = this.onTwid.bind(this);
 
     this.twidButtonElement.addEventListener('click', this.onTwid);
-    this.operandXElement.addEventListener('input', this.updateOperandValue(this.operandX));
-    this.operandYElement.addEventListener('input', this.updateOperandValue(this.operandY));
+    this.operandXElement.addEventListener(
+      'input',
+      this.updateOperandValue.bind(this, this.operandXElement),
+    );
+    this.operandYElement.addEventListener(
+      'input',
+      this.updateOperandValue.bind(this, this.operandYElement),
+    );
 
     this.operandXElement.value = this.model.getX();
     this.operandYElement.value = this.model.getY();
@@ -40,7 +48,12 @@ export default class Controller {
 
   onTwid(event) {
     event.preventDefault();
+    const sum = this.model.twid();
+
+    // обрезаем оставшиеся справа нули
+    const result = sum.toFixed(10).replace(/[0]+$/, '');
+
     // eslint-disable-next-line no-undef, no-alert
-    alert(this.model.twid());
+    alert(result);
   }
 }

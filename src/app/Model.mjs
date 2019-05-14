@@ -3,6 +3,10 @@ const defaultOperandValues = {
   y: 0.2,
 };
 
+const parseInputValue = function parseInputValue(value) {
+  return +value;
+};
+
 export default class Model {
   constructor() {
     this.x = defaultOperandValues.x;
@@ -22,14 +26,10 @@ export default class Model {
   }
 
   setY(value) {
-    this.y = this.parseInputValue(value);
+    this.y = parseInputValue(value);
   }
 
   twid() {
     return this.x + this.y;
-  }
-
-  parseInputValue(value) {
-    return +value;
   }
 }

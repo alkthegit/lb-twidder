@@ -1,57 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible"
-        content="ie=edge">
-    <link rel="stylesheet"
-        href="./src/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./src/style.css" />
     <title>Twidder</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Приложение 1
-            <p class="main-subheading">twidder</p>
-        </h1>
-        <p>Автор: Кузин-Алексинский А.С.</p>
+      <h1>
+        Приложение 1
+        <p class="main-subheading">twidder</p>
+      </h1>
+      <p>Автор: Кузин-Алексинский А.С.</p>
     </header>
     <main>
-        <div id="app-twidder">
-            <form id="twidForm">
-                <div class="form-operand">
-                    <label class="operand-label"
-                        for="operandX">Первое число:</label><br>
-                    <input class="operand"
-                        type="number"
-                        name="operandX"
-                        id="operandX"
-                        step="0.1">
-                </div>
-                <div class="form-operand">
-                    <label class="operand-label"
-                        for="operandX">Второе число:</label><br>
-                    <input class="operand"
-                        type="number"
-                        name="operandY"
-                        id="operandY"
-                        step="0.1">
-                </div>
+      <div id="app-twidder">
+        <form id="twidForm">
+          <div class="form-operand">
+            <label class="operand-label" for="operandX">Первое число:</label
+            ><br />
+            <input
+              class="operand"
+              type="number"
+              name="operandX"
+              id="operandX"
+              step="0.1"
+            />
+          </div>
+          <div class="form-operand">
+            <label class="operand-label" for="operandX">Второе число:</label
+            ><br />
+            <input
+              class="operand"
+              type="number"
+              name="operandY"
+              id="operandY"
+              step="0.1"
+            />
+          </div>
 
-                <button type="submit"
-                    id="twidButton">Сложить</button>
-            </form>
-        </div>
+          <button type="submit" id="twidButton">Сложить</button>
+        </form>
+      </div>
     </main>
 
-    <script src="./src/app/model.js"></script>
-    <script src="./src/app/controller.js"></script>
-    <script src="./src/app/app.js"></script>
-    <script src="./src/index.js"></script>
-    <!-- <script src="./dist/main.js"></script> -->
-</body>
-
+    <script type="module" src="./src/index.mjs"></script>
+  </body>
 </html>

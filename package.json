@@ -9,6 +9,10 @@
   "private": true,
   "author": "Alexander K.-Aleksinskij",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
+  },
   "dependencies": {}
 }

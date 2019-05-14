@@ -4,60 +4,30 @@ const twidButtonId = 'twidButton';
 const twidFormId = 'twidForm';
 
 export default class Controller {
-  _operandX;
-  _operandY;
-  _twidButton;
-  _twidform;
-  _containerDiv;
-  model;
-
   constructor(containerDiv, model) {
-    this._containerDiv = containerDiv;
+    this.containerDiv = containerDiv;
     this.model = model;
 
-    this.twidButton.addEventListener('click', this.onTwid);
-    this.operandX.addEventListener(
-      'input',
-      this.updateOperandValue.bind(this, this.operandX),
-    );
-    this.operandY.addEventListener(
-      'input',
-      this.updateOperandValue.bind(this, this.operandY),
-    );
+    // ссылки на элементы управления
+    this.operandXElement = this.containerDiv.querySelector(`#${operandXId}`);
+    this.operandYElement = this.containerDiv.querySelector(`#${operandYId}`);
 
-    this.operandX.value = this.model.getX();
-    this.operandY.value = this.model.getY();
+    this.twidButtonElement = this.containerDiv.querySelector(`#${twidButtonId}`);
+    this.twidform = this.containerDiv.querySelector(`#${twidFormId}`);
+
+    // перепривязка методов к правильному this (что-то типа как в компонентах React)
+    this.updateOperandValue = this.updateOperandValue.bind(this);
+    this.onTwid = this.onTwid.bind(this);
+
+    this.twidButtonElement.addEventListener('click', this.onTwid);
+    this.operandXElement.addEventListener('input', this.updateOperandValue(this.operandX));
+    this.operandYElement.addEventListener('input', this.updateOperandValue(this.operandY));
+
+    this.operandXElement.value = this.model.getX();
+    this.operandYElement.value = this.model.getY();
   }
 
-  get operandX() {
-    return (
-      this._operandX ||
-      (this._operandX = this._containerDiv.querySelector('#' + operandXId))
-    );
-  }
-
-  get operandY() {
-    return (
-      this._operandY ||
-      (this._operandY = this._containerDiv.querySelector('#' + operandYId))
-    );
-  }
-
-  get twidButton() {
-    return (
-      this._twidButton ||
-      (this._twidButton = this._containerDiv.querySelector('#' + twidButtonId))
-    );
-  }
-
-  get twidForm() {
-    return (
-      this._twidForm ||
-      (this._twidForm = this._containerDiv.querySelector('#' + twidFormId))
-    );
-  }
-
-  updateOperandValue = (operand, event) => {
+  updateOperandValue(operand, event) {
     const value = Number.parseFloat(event.target.value);
     if (operand.id === operandXId) {
       this.model.setX(value);
@@ -66,10 +36,11 @@ export default class Controller {
     if (operand.id === operandYId) {
       this.model.setY(value);
     }
-  };
+  }
 
-  onTwid = (event) => {
+  onTwid(event) {
     event.preventDefault();
+    // eslint-disable-next-line no-undef, no-alert
     alert(this.model.twid());
-  };
+  }
 }
